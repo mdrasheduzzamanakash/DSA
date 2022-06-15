@@ -1,5 +1,6 @@
-// author: shiponcs
+// author: abdul matin 
 // https://leetcode.com/problems/flood-fill/
+
 class Solution {
 public:
     int vis[51][51];
@@ -29,11 +30,3 @@ public:
         return image;
     }
 };
-
-/*
-1 1 3 3
-Two
-0 1 3 3
-three
-0 2 3 3
-*/
