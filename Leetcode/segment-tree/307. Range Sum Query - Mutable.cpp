@@ -1,4 +1,3 @@
-// leetcode problem https://leetcode.com/problems/range-sum-query-mutable/
 class NumArray {
 private:
     int arr_size;
