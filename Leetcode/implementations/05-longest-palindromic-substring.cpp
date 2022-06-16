@@ -2,6 +2,9 @@ class Solution {
   public:
     string longestPalindrome(string s) {
         int n = s.size();
+        if (s == string(n, s[0]))
+            return s;
+
         int from = 0;
         int longestSize = 1;
         for (int i = 0; i < s.size() - 1; i++) {
@@ -21,7 +24,12 @@ class Solution {
                 longestSize = size;
                 from = i - k;
             }
+
+            // longer solution is not possible from next positions:
+            if (n - i < (longestSize / 2) - 1)
+                break;
         }
+
         return s.substr(from, longestSize);
     }
 };
