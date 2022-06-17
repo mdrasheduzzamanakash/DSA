@@ -1,3 +1,4 @@
+//https://leetcode.com/problems/x-of-a-kind-in-a-deck-of-cards/
 class Solution {
 public:
     bool hasGroupsSizeX(vector<int>& deck) {
