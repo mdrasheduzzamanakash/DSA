@@ -11,8 +11,13 @@ class Solution {
         for (int j = i; j < n; j++) {
             swap(nums[i], nums[j]);
             rec(i + 1);
-            swap(nums[i], nums[j]);
+            // swap(nums[i], nums[j]);
         }
+
+        // An alternative way to reset state:
+        // Also applicable when there are duplicate values: see LC47.
+        for (int j = n - 1; j > 0; j--)
+            swap(nums[i], nums[j]);
     }
 
   public:
