@@ -5,7 +5,6 @@
  leave. It took me 3 days to get AC on this problem as I was such bad at problem
  solving.
 */
-
 #include <iostream>
 #include <map>
 #include <cstring>
@@ -37,9 +36,8 @@ void init(int n) {
 }
 
 int find(int x) {
-    if(x == parents[x] ) 
-        return x;
-    return parents[x] = find(parents[x]); // without path compression it brings TLE if we use union by size
+    while(x != parents[x]) x = parents[x];
+    return x;
 }
 
 void unite(int a, int b) {
