@@ -39,13 +39,13 @@ void init(int n) {
 int find(int x) {
     if(x == parents[x] ) 
         return x;
-    return parents[x] = find(parents[x]); // without path compression it brings TLE
+    return parents[x] = find(parents[x]); // without path compression it brings TLE if we use union by size
 }
 
 void unite(int a, int b) {
     a = find(a), b = find(b);
     if(a == b) return;
-    if(a < b) swap(a,b);
+    if(sizes[a] < sizes[b]) swap(a,b);
     sizes[a] += b;
     parents[b] = a;
 }
